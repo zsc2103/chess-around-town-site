@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chess Around Town | Find where to play chess in New York City</title>
+<meta name="description" content="Chess Around Town helps players in New York City find each other and coordinate in-person chess meetups at parks, clubs, cafes, and other venues. Available on iPhone; Android coming soon.">
+<meta name="theme-color" content="#241811">
+<link rel="canonical" href="https://chessaroundtown.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chess Around Town">
+<meta property="og:title" content="Chess Around Town | Find where to play chess in New York City">
+<meta property="og:description" content="Find where to play, and who'll be there. Available on iPhone; Android coming soon.">
+<meta property="og:url" content="https://chessaroundtown.com/">
+<meta property="og:image" content="https://chessaroundtown.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Chess Around Town home">
+      <img src="assets/logo-512.png" alt="" width="40" height="40">
+      <span>Chess Around Town</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <img class="hero-logo" src="assets/logo-512.png" alt="Chess Around Town logo" width="132" height="132">
+      <h1>Find where to play chess in <span>New York City</span>.</h1>
+      <p>Chess Around Town helps players find each other and coordinate in-person chess meetups at parks, clubs, cafes, and other venues across the city.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="split">
+
+      <section class="panel panel-ios" aria-labelledby="ios-title">
+        <span class="eyebrow">iPhone</span>
+        <h2 id="ios-title">Download on the App Store</h2>
+        <p>See where people are playing, find tournaments and club nights, and join a game.</p>
+        <a class="store-badge" href="https://apps.apple.com/app/id6809577324" aria-label="Download Chess Around Town on the App Store">
+          <img src="assets/appstore-badge.svg" alt="Download on the App Store">
+        </a>
+      </section>
+
+      <section class="panel panel-android" aria-labelledby="android-title">
+        <span class="eyebrow">Android</span>
+        <span class="pill">Coming soon</span>
+        <h2 id="android-title">Android is on the way</h2>
+        <p>Join the waitlist and we'll email you as soon as Chess Around Town launches on Android.</p>
+        <form class="waitlist" id="waitlist-form" novalidate>
+          <label class="sr-only" for="waitlist-email">Email address</label>
+          <input id="waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
+          <div class="hp" aria-hidden="true">
+            <label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <button class="btn" type="submit">Notify me</button>
+        </form>
+        <p class="form-msg" id="waitlist-msg" role="status" aria-live="polite"></p>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Partnerships &amp; comments</h2>
+      <p>Are you a club, venue, tournament organizer, or brand interested in partnering with Chess Around Town? Or do you have a comment or idea? We'd love to hear from you.</p>
+      <a class="email" href="mailto:chessaroundtown@gmail.com">chessaroundtown@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Chess Around Town</span>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:chessaroundtown@gmail.com">chessaroundtown@gmail.com</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="waitlist.js"></script>
+</body>
+</html>

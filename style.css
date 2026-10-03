@@ -1,0 +1,146 @@
+:root {
+  color-scheme: dark;
+  /* Same palette as the app (lib/theme.ts) */
+  --bg: #241811;
+  --surface: #382720;
+  --surface-alt: #4a3528;
+  --border: #5e4632;
+  --primary: #c9975a;
+  --primary-light: #d9ab72;
+  --text: #ffffff;
+  --muted: #d8c5ae;
+  --faint: #9c8670;
+  --nav-bg: #16241c;
+  --nav-border: #2a4335;
+  --nav-inactive: #7c9186;
+  --danger: #e0614f;
+  --ok: #7fd1a0;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--primary); }
+a:hover { color: var(--primary-light); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: min(1100px, 100% - 40px); margin-inline: auto; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header { border-bottom: 1px solid var(--border); }
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between; padding: 16px 0;
+}
+.brand {
+  display: flex; align-items: center; gap: 12px;
+  color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.1rem;
+}
+.brand:hover { color: var(--text); }
+.brand img { width: 40px; height: 40px; border-radius: 10px; flex: none; }
+.site-nav a {
+  color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-left: 22px;
+}
+.site-nav a:hover { color: var(--primary); }
+
+/* ---------- Hero ---------- */
+.hero { text-align: center; padding: 56px 0 36px; }
+.hero-logo {
+  width: 132px; height: 132px; border-radius: 30px;
+  box-shadow: 0 0 0 1px var(--border), 0 18px 50px rgba(0, 0, 0, 0.45), 0 0 90px rgba(201, 151, 90, 0.18);
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 26px 0 14px;
+}
+.hero h1 span { color: var(--primary); }
+.hero p { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; }
+
+/* ---------- The two halves ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 16px 0 56px; }
+.panel {
+  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; text-align: center; min-height: 380px; padding: 44px 36px; border-radius: var(--radius);
+}
+.panel h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
+.panel p { margin: 0; color: var(--muted); max-width: 420px; }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--faint); }
+
+.panel-ios {
+  background: linear-gradient(165deg, var(--surface), #2b1d15);
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 0 1px rgba(201, 151, 90, 0.25), 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+.panel-ios .eyebrow { color: var(--primary); }
+.store-badge { display: inline-block; margin-top: 10px; transition: transform 0.15s ease; }
+.store-badge:hover { transform: translateY(-2px); }
+.store-badge img { display: block; height: 76px; width: auto; }
+
+.panel-android { background: var(--nav-bg); border: 1px solid var(--nav-border); }
+.pill {
+  display: inline-block; border: 1px solid var(--primary); color: var(--primary); border-radius: 999px;
+  padding: 4px 14px; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
+}
+
+/* ---------- Waitlist form ---------- */
+.waitlist { display: flex; gap: 10px; width: 100%; max-width: 440px; margin-top: 6px; }
+.waitlist input[type="email"] {
+  flex: 1; min-width: 0; background: rgba(0, 0, 0, 0.28); border: 1px solid var(--nav-border);
+  color: var(--text); border-radius: 12px; padding: 14px 16px; font-size: 1rem; font-family: inherit;
+}
+.waitlist input::placeholder { color: var(--nav-inactive); }
+.waitlist input[type="email"]:focus { outline: 2px solid var(--primary); outline-offset: 1px; border-color: var(--primary); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+.btn {
+  background: var(--primary); color: var(--bg); border: 0; border-radius: 12px; padding: 14px 20px;
+  font-weight: 700; font-size: 1rem; font-family: inherit; cursor: pointer; white-space: nowrap;
+}
+.btn:hover { background: var(--primary-light); }
+.btn[disabled] { opacity: 0.6; cursor: default; }
+.panel p.form-msg { min-height: 1.5em; font-size: 0.95rem; max-width: 440px; }
+.form-msg.ok { color: var(--ok); font-weight: 600; }
+.form-msg.err { color: var(--danger); }
+
+/* ---------- Contact ---------- */
+.contact { border-top: 1px solid var(--border); padding: 48px 0; text-align: center; }
+.contact h2 { margin: 0 0 10px; font-size: 1.6rem; }
+.contact p { color: var(--muted); max-width: 580px; margin: 0 auto 14px; }
+.contact .email { font-weight: 700; font-size: 1.2rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--border); padding: 26px 0; color: var(--faint); font-size: 0.9rem; }
+.site-footer .container { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; align-items: center; }
+.site-footer nav a { color: var(--muted); text-decoration: none; margin-left: 18px; }
+.site-footer nav a:first-child { margin-left: 0; }
+.site-footer nav a:hover { color: var(--primary); }
+
+/* ---------- Legal pages (privacy / terms) ---------- */
+.legal { max-width: 760px; padding: 44px 0 72px; }
+.legal h1 { font-size: 2rem; margin: 0 0 4px; }
+.legal .updated { color: var(--faint); font-size: 0.9rem; margin: 0 0 2em; }
+.legal h2 { font-size: 1.25rem; margin-top: 2.2em; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.legal p, .legal li { color: var(--muted); }
+.legal strong { color: var(--text); }
+.legal ul { padding-left: 1.3em; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 820px) {
+  .split { grid-template-columns: 1fr; }
+  .panel { min-height: 0; padding: 40px 24px; }
+  .waitlist { flex-direction: column; }
+  .hero { padding-top: 40px; }
+}
+@media (max-width: 480px) {
+  .site-nav a { margin-left: 14px; font-size: 0.9rem; }
+  .brand span { display: none; }
+}
