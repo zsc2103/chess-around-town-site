@@ -54,11 +54,11 @@
             if (body && body.code === "22023") {
               show("Please enter a valid email address.", "err");
             } else {
-              show("Something went wrong. Please try again, or email chessaroundtown@gmail.com.", "err");
+              show("Something went wrong. Please try again, or email support@chessaroundtown.com.", "err");
             }
           },
           function () {
-            show("Something went wrong. Please try again, or email chessaroundtown@gmail.com.", "err");
+            show("Something went wrong. Please try again, or email support@chessaroundtown.com.", "err");
           }
         );
       })
