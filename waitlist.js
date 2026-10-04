@@ -5,6 +5,14 @@
   var SUPABASE_URL = "https://fumukidrllxkifsjhthi.supabase.co";
   var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1bXVraWRybGx4a2lmc2podGhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMDc4ODEsImV4cCI6MjEwMzg4Mzg4MX0.sewKxN_pW7h2s-nlnUK52_zx75kuuFPcbLBG8l10JC8";
 
+  // Which flyer (if any) brought this visitor here; remembered for the session.
+  var SRC = "";
+  try {
+    var q = new URLSearchParams(window.location.search).get("src");
+    if (q && /^[a-z0-9-]{1,40}$/.test(q)) sessionStorage.setItem("cat_src", q);
+    SRC = sessionStorage.getItem("cat_src") || "";
+  } catch (e) {}
+
   var form = document.getElementById("waitlist-form");
   if (!form) return;
   var input = document.getElementById("waitlist-email");
@@ -41,7 +49,7 @@
         apikey: SUPABASE_ANON_KEY,
         Authorization: "Bearer " + SUPABASE_ANON_KEY,
       },
-      body: JSON.stringify({ p_email: email }),
+      body: JSON.stringify({ p_email: email, p_source: SRC || null }),
     })
       .then(function (res) {
         if (res.ok) {
